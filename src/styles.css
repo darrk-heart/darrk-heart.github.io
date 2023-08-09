@@ -1,0 +1,373 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+  --black: #0F1D2B;
+  --dkblue: #17456B;
+  --plum: #6BBF98;
+  --hotmag: #ffa600;
+  --magenta: #FFB000;
+  --aqua: #419FB7;
+  --white: #F5F6EE;
+  --font-size: 1.3rem;
+  --mono: "Oxygen mono", monospace;
+  --sans: Oxygen, sans-serif;
+}
+
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+a {
+  color: var(--magenta);
+}
+
+a:hover {
+  color: var(--hotmag);
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* background color divs */
+
+.section-plum {
+  background-color: var(--white);
+}
+
+.section-dkblue {
+  background-color: var(--dkblue);
+}
+
+.gradient {
+  background: linear-gradient(90deg, rgba(23,69,107,1) 0%, rgba(255,166,0,1) 100%);
+  height: 2px;
+}
+
+/* intro styles */
+
+#intro {
+  padding: 4rem 1rem 10rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#intro p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#intro .name {
+  font-family: var(--mono);
+}
+
+.name span {
+  font-family: var(--sans);
+  font-size: 4rem;
+  color: var(--aqua);
+  display: block;
+}
+
+#intro h2 {
+  font-size: 4rem;
+}
+
+/* navbar */
+nav {
+  font-family: var(--mono);
+  font-size: 80%;
+  padding: 1rem;
+}
+
+nav h1 a {
+  font-family: var(--sans);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav [class*="fa-"] {
+  font-size: 150%;
+  color: var(--aqua);
+}
+
+nav h1 [class*="fa-"] {
+  font-size: 100%;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover,
+nav [class*="fa-"]:hover {
+  color: var(--magenta);
+}
+
+.button {
+  background-color: var(--magenta);
+  color: var(--black);
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: var(--mono);
+  text-decoration: none;
+}
+
+.button:hover {
+  color: var(--black);
+  background-color: var(--hotmag);
+}
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+}
+
+/* projects section */
+
+#projects {
+  padding: 4rem 1rem;
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: calc(2.5rem * 1.5);
+}
+
+#projects h3 {
+  color: var(--aqua);
+}
+
+#projects h4 {
+  font-size: 1rem;
+  font-family: var(--mono);
+  margin: 0;
+}
+
+.blackbox {
+  background-color: var(--black);
+  padding: 1rem;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#projects ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+#projects .reverse .text {
+  grid-column: 1/7;
+  order: 2;
+  text-align: left;
+}
+
+#projects .reverse img {
+  grid-column: 6/11;
+  grid-row: 1/2;
+}
+
+#projects .reverse ul {
+  justify-content: flex-start;
+}
+
+#projects img {
+  margin: 2rem 0 4rem 0;
+  border-left: 1px solid var(--aqua);
+  border-top: 1px solid var(--aqua);
+  border-radius: 25px;
+  padding: 1rem;
+}
+
+@media (min-width: 800px) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+  }
+
+  #projects {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #projects img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+  }
+
+  .text {
+    grid-column: 5/11;
+    grid-row: 1/2;
+    order: 2;
+    text-align: right;
+  }
+
+  #description {
+    text-align: left;
+  }
+
+  #projects ul {
+    justify-content: flex-end;
+  }
+}
+
+/* footer section */
+footer {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 3rem;
+}
+
+/* contact section */
+
+#contact {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3rem 0;
+  border-radius: 1em;
+}
+
+#contact p{
+  margin: 2rem 0;
+}
+
+#contact h2,
+#contact p,
+#contact label,
+#submit-button {
+  color: var(--black);
+}
+
+#contact ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned*/
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font by default */
+  font: 1em var(--sans);
+  /* To give the same size to all text fields */
+  width: 300px;
+}
+
+input:focus,
+textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: var(--black);
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+  /* To give enough room to type some text */
+  height: 8rem;
+}
+
+#submit-button {
+  font-weight: bold;
+  font-size: calc(var(--font-size) * 0.75);
+  padding: 0.8rem;
+  background-color: var(--magenta);
+  color: var(--black);
+  border-radius: 5px;
+  font-family: var(--mono);
+}
+
+.submit-button-wrapper{
+  text-align: left;
+  margin-left: 0.5em;
+  padding-left: 90px;
+}
+
+#submit-button:hover {
+  cursor: pointer;
+}
+
+
+.button:hover {
+  color: var(--black);
+  background-color: var(--hotmag);
+}
+
+/* about section */
+
+@media (min-width: 800px) {
+ #about-text {
+   grid-column: 6/11;
+ }
+}
