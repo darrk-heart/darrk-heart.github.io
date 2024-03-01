@@ -1,3 +1,4 @@
 # my_portfolio
 
-never satisfied!!!
+can't stop updating, 
+a new one in developement tho
